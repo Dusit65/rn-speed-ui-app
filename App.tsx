@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import StackNavigator from "./navigation/StackNavigator";
 import HomeUI from "./views/HomeUI";
 import A1Page from "./views/A1Page";
 import A2Page from "./views/A2Page";
