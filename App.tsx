@@ -8,6 +8,7 @@ import A3Page from "./views/A3Page";
 import A4Page from "./views/A4Page";
 import B1Page from "./views/B1Page";
 import B2Page from "./views/B2Page";
+import B3Page from "./views/B3Page";
 
 
 
@@ -19,7 +20,7 @@ export default function App() {
       //   <StackNavigator />
       // </NavigationContainer>
       <>
-      <B2Page />
+      <B3Page />
       </>
     
   );

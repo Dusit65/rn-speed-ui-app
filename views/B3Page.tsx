@@ -7,45 +7,69 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { Button, Icon } from "@rneui/themed";
+import { Button, CheckBox } from "@rneui/themed";
 
 export default function B2Page() {
   return (
     <View style={styles.container}>
-      {/* Logo */}
-      <View style={styles.logoContainer}>
-        <Image
-          source={require("./../assets/homeHuman.png")}
-          style={styles.logo}
-        />
-      </View>
-      <View style={{ height: 20 }} /> {/* sizeBox */}
+        <View style={styles.logoContainer}>
+                <Image
+                  source={require("./../assets/homeHuman.png")}
+                  style={styles.logo}
+                />
+              </View>
+      
       {/* Signin Text */}
-      <Text style={styles.signinText}>Sign in your account</Text>
+      <Text style={styles.signinText}>Create your account</Text>
       <View style={{ height: 30 }} /> {/* sizeBox */}
+      {/* Name Text */}
+      <Text style={styles.inputText}>Name</Text>
+      {/* Name Input Fields */}
+      <View style={styles.inputContainer}>
+        <TextInput placeholder="ex: jon smith" style={styles.input} />
+      </View>
       {/* Email Text */}
       <Text style={styles.inputText}>Email</Text>
       {/* Email Input Fields */}
       <View style={styles.inputContainer}>
-        <TextInput placeholder="Enter your email" style={styles.input} />
+        <TextInput placeholder="ex: jon.smith@email.com" style={styles.input} />
       </View>
       {/* Password Text */}
       <Text style={styles.inputText}>Password</Text>
       {/* Password Input Fields */}
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="Enter your password"
+          placeholder="**************"
           secureTextEntry
           style={styles.input}
         />
       </View>
-      <View style={{ height: 30 }} /> {/* sizeBox */}
-      {/* Signin Button */}
-      <Button title="SIGN IN" buttonStyle={styles.loginButton} />
-      <View style={{ height: 20 }} /> {/* sizeBox */}
+      {/* Confirm Password Text */}
+      <Text style={styles.inputText}>Confirm Password</Text>
+      {/* Confirm Password Input Fields */}
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="**************"
+          secureTextEntry
+          style={styles.input}
+        />
+      </View>
+      {/* Terms & Policy  Link*/}
+      <View style={styles.linedirection}>
+        {/*CheckBox */}
+        <CheckBox center checked={false}  />
+        <Text style={styles.registerText}>
+          I understand the{" "}
+          <Text style={styles.registerLink}>terms & policy.</Text>
+        </Text>
+      </View>
+      <View style={{ height: 10 }} /> {/* sizeBox */}
+      {/* Login Button */}
+      <Button title="SIGN UP" buttonStyle={styles.signinButton} />
+      <View style={{ height: 10 }} /> {/* sizeBox */}
       {/* Social Login */}
-      <Text style={styles.orText}>Or Login with</Text>
-      <View style={{ height: 20 }} /> {/* sizeBox */}
+      <Text style={styles.orText}>Or sign up with</Text>
+      <View style={{ height: 10 }} /> {/* sizeBox */}
       <View style={styles.socialContainer}>
         <TouchableOpacity style={styles.socialButton}>
           <Image
@@ -66,7 +90,7 @@ export default function B2Page() {
           />
         </TouchableOpacity>
       </View>
-      <View style={{ height: 100 }} /> {/* sizeBox */}
+      <View style={{ height: 25 }} /> {/* sizeBox */}
       {/* SIGN UP  Link*/}
       <Text style={styles.registerText}>
         Don't have an account? <Text style={styles.registerLink}>SIGN UP</Text>
@@ -90,8 +114,8 @@ const styles = StyleSheet.create({
     left: 20,
   },
   logoContainer: {
-    alignItems: "center",
-    marginBottom: 1,
+    alignItems: "flex-end",
+    
   },
   logo: {
     borderWidth: 1,
@@ -101,20 +125,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     // marginBottom: 10,
   },
-  signinText: {
-    fontSize: 30,
-    fontFamily: "tahoma",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 30,
-  },
+  
   inputContainer: {
     flexDirection: "row",
     backgroundColor: "#F5F5F5",
     borderRadius: 10,
     paddingHorizontal: 15,
     alignItems: "center",
-    marginBottom: 15,
+    marginBottom: 10,
   },
   input: {
     flex: 1,
@@ -126,7 +144,7 @@ const styles = StyleSheet.create({
     color: "grey",
     fontFamily: "tahoma",
     marginLeft: 10,
-    marginBottom: 5,
+    marginBottom: 0,
   },
   eyeIcon: {
     marginLeft: 10,
@@ -137,11 +155,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontFamily: "tahoma",
   },
-  loginButton: {
+  signinButton: {
     backgroundColor: "#00b140",
-    paddingVertical: 12,
+    paddingVertical: 10,
     borderRadius: 10,
     fontFamily: "tahoma",
+  },
+  signinText: {
+    fontSize: 30,
+    fontFamily: "tahoma",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 20,
   },
   orText: {
     textAlign: "center",
@@ -152,7 +177,7 @@ const styles = StyleSheet.create({
   socialContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    gap: 60,
+    gap: 50,
   },
   socialButton: {
     backgroundColor: "#F5F5F5",
@@ -176,7 +201,7 @@ const styles = StyleSheet.create({
   linedirection: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 15,
+    // marginVertical: 10,
   },
   line: {
     flex: 1,
