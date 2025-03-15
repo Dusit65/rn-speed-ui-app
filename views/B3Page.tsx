@@ -8,17 +8,21 @@ import {
   Image,
 } from "react-native";
 import { Button, CheckBox } from "@rneui/themed";
+import { NavigationProp } from "@react-navigation/native";
 
-export default function B2Page() {
+export default function B3Page({
+  navigation,
+}: {
+  navigation: NavigationProp<any>;
+}) {
   return (
     <View style={styles.container}>
-        <View style={styles.logoContainer}>
-                <Image
-                  source={require("./../assets/homeHuman.png")}
-                  style={styles.logo}
-                />
-              </View>
-      
+      <View style={styles.logoContainer}>
+        <Image
+          source={require("./../assets/homeHuman.png")}
+          style={styles.logo}
+        />
+      </View>
       {/* Signin Text */}
       <Text style={styles.signinText}>Create your account</Text>
       <View style={{ height: 30 }} /> {/* sizeBox */}
@@ -57,7 +61,7 @@ export default function B2Page() {
       {/* Terms & Policy  Link*/}
       <View style={styles.linedirection}>
         {/*CheckBox */}
-        <CheckBox center checked={false}  />
+        <CheckBox center checked={false} />
         <Text style={styles.registerText}>
           I understand the{" "}
           <Text style={styles.registerLink}>terms & policy.</Text>
@@ -92,9 +96,12 @@ export default function B2Page() {
       </View>
       <View style={{ height: 25 }} /> {/* sizeBox */}
       {/* SIGN UP  Link*/}
-      <Text style={styles.registerText}>
-        Don't have an account? <Text style={styles.registerLink}>SIGN UP</Text>
-      </Text>
+      <View style={styles.siginDirection}>
+        <Text style={styles.registerText}>Don't have an account?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("B2Page")}>
+          <Text style={styles.registerLink}>SIGN IN </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -115,7 +122,6 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: "flex-end",
-    
   },
   logo: {
     borderWidth: 1,
@@ -125,7 +131,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     // marginBottom: 10,
   },
-  
+
   inputContainer: {
     flexDirection: "row",
     backgroundColor: "#F5F5F5",
@@ -197,11 +203,17 @@ const styles = StyleSheet.create({
   registerLink: {
     color: "#00b140",
     fontWeight: "bold",
+    // marginTop: 5,
   },
   linedirection: {
     flexDirection: "row",
     alignItems: "center",
     // marginVertical: 10,
+  },
+  siginDirection: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 100,
   },
   line: {
     flex: 1,

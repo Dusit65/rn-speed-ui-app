@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { Button, Icon } from "@rneui/themed";
+import { NavigationProp } from '@react-navigation/native';
 
-const A4Page = () => {
+const A4Page = ({ navigation }: { navigation: NavigationProp<any> }) => {
   const [otp, setOtp] = useState(['', '', '', '']);
 
   const handleOTPChange = (index: number, value: string) => {
@@ -21,7 +22,7 @@ const A4Page = () => {
   return (
     <View style={styles.container}>
       {/* Back Button */}
-      <TouchableOpacity style={styles.backButton}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("A3Page")}>
         <Icon name="chevron-left" type="feather" size={24} color="black" />
       </TouchableOpacity>
       <Text style={styles.title}>OTP Verification</Text>
@@ -43,8 +44,8 @@ const A4Page = () => {
       </View>
 
       
-        {/* Send Code Button */}
-      <Button title="Send Code" buttonStyle={styles.verifyButton} />
+        {/* Verify Code Button */}
+      <Button title="Verify" buttonStyle={styles.verifyButton} />
         
       
     </View>

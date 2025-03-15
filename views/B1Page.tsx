@@ -20,10 +20,14 @@ export default function B1Page({ navigation }: { navigation: NavigationProp<any>
       >
         {/* Logo */}
         <View style={styles.logoContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("A1Page")}>
-            <Image source={require("./../assets/homeHuman.png")} />
+          <TouchableOpacity onPress={() => navigation.navigate("B2Page")}>
+            <Image source={require("./../assets/homeHuman.png")} style={styles.logo} />
           </TouchableOpacity>
         </View>
+        <Text style={styles.text1}>HOPE FOR </Text>
+        <Text style={styles.text2}>HUMANITY </Text>
+        <Text style={styles.text3}>Welcome to  </Text>
+        <Text style={styles.text4}>hope for humanity  </Text>
       </ImageBackground>
     </View>
   );
@@ -43,12 +47,12 @@ const styles = StyleSheet.create({
   logoContainer: {
     // alignItems: "",
     marginBottom: 4,
+    marginTop: 300,
   },
   logo: {
-    width: 200,
-    height: 200,
-    marginTop: 300,
-    marginBottom: 10,
+    width: 100,
+    height: 100,
+    marginBottom: 20,
   },
   brandText: {
     fontSize: 24,
@@ -57,5 +61,34 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "80%",
     marginBottom: 20,
+  },
+  text1: {
+    fontSize: 37,
+    color: "white",
+    fontFamily: "tahoma",
+   
+  },
+  text2: {
+    fontSize: 37,
+    color: "white",
+    fontFamily: "tahoma",
+    fontWeight: "bold",
+    
+  },
+  text3: {
+    marginTop: 170,
+    fontSize: 30,
+    color: "green",
+    fontFamily: "tahoma",
+    fontWeight: "bold",
+   
+  },
+  text4: {
+    
+    fontSize: 30,
+    color: "green",
+    fontFamily: "tahoma",
+    fontWeight: "bold",
+   
   },
 });

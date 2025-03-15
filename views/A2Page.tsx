@@ -8,12 +8,13 @@ import {
   Image,
 } from "react-native";
 import { Button, Icon } from "@rneui/themed";
+import { NavigationProp } from "@react-navigation/native";
 
-export default function A2Page() {
+export default function A2Page({ navigation }: { navigation: NavigationProp<any> }) {
   return (
     <View style={styles.container}>
       {/* Back Button */}
-      <TouchableOpacity style={styles.backButton}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate("A1Page")}>
         <Icon name="chevron-left" type="feather" size={24} color="black" />
       </TouchableOpacity>
       <View style={{ height: 40 }} /> {/* sizeBox */}
@@ -41,7 +42,7 @@ export default function A2Page() {
         />
       </View>
       {/* Forgot Password */}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("A3Page")}>
         <Text style={styles.forgotPassword}>Forgot Password?</Text>
       </TouchableOpacity>
       <View style={{ height: 10 }} /> {/* sizeBox */}

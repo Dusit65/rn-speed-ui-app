@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from "react-native";
 import { Button } from "@rneui/themed";
-
-export default function A1Page() {
+import { NavigationProp } from "@react-navigation/native";
+export default function A1Page({ navigation }: { navigation: NavigationProp<any> }) {
   return (
     <View style={styles.container}>
       {/* Background Image */}
@@ -21,7 +21,7 @@ export default function A1Page() {
 
         {/* Buttons */}
         <View style={styles.buttonContainer}>
-          <Button title="Login" buttonStyle={styles.loginButton} />
+          <Button title="Login" buttonStyle={styles.loginButton}onPress={() => navigation.navigate("A2Page")} />
           <Button title="Register" type="outline" buttonStyle={styles.registerButton}  titleStyle={{ color: "black" }} />
         </View>
 

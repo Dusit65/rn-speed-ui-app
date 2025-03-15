@@ -8,8 +8,13 @@ import {
   Image,
 } from "react-native";
 import { Button, Icon } from "@rneui/themed";
+import { NavigationProp } from "@react-navigation/native";
 
-export default function B2Page() {
+export default function B2Page({
+  navigation,
+}: {
+  navigation: NavigationProp<any>;
+}) {
   return (
     <View style={styles.container}>
       {/* Logo */}
@@ -66,12 +71,15 @@ export default function B2Page() {
           />
         </TouchableOpacity>
       </View>
-      <View style={{ height: 100 }} /> {/* sizeBox */}
+      <View style={{ height: 50 }} /> {/* sizeBox */}
       {/* SIGN UP  Link*/}
-      <Text style={styles.registerText}>
-        Don't have an account? <Text style={styles.registerLink}>SIGN UP</Text>
-      </Text>
-    </View>
+      <View style={styles.sigupDirection}>
+              <Text style={styles.registerText}>Don't have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.navigate("B2Page")}>
+                <Text style={styles.registerLink}>SIGN IN </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
   );
 }
 
@@ -179,9 +187,15 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   line: {
-    flex: 1,
+    // flex: ,
     height: 1,
     backgroundColor: "#D3D3D3", // Lighter gray color
     marginHorizontal: 10,
+    marginTop: 50,
+  },
+  sigupDirection: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 100,
   },
 });
