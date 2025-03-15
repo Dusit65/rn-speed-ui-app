@@ -2,14 +2,16 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { Button } from "@rneui/themed";
-import { useNavigation } from "@react-navigation/native";
-import A1Page from "./A1Page";
+import { NavigationProp } from "@react-navigation/native";
 
-export default function HomeUI() {
+
+
+export default function HomeUI({ navigation }: { navigation: NavigationProp<any> }) {
   //Use Navigation
-  const navigation = useNavigation(); // ใช้ navigation เพื่อนำทาง
   //+++++++++++++++++++++++++++ UI +++++++++++++++++++++++++++++
+
   return (
+    
     <View style={styles.container}>
       <View style={styles.show}>
         {/* Image */}
@@ -22,7 +24,7 @@ export default function HomeUI() {
         <Button
           color="#fff"
           buttonStyle={styles.humanityBtn}
-          // onPress={() => navigation.navigate("A1Page")}
+          onPress={() => navigation.navigate("A1Page")}
         >
           <Image
             source={require("./../assets/homeFruzz.png")}
@@ -30,7 +32,8 @@ export default function HomeUI() {
         </Button>
         <View style={{ height: 50 }} /> {/* sizeBox */}
         {/* Go to Humanity */}
-        <Button color="#00d8b6" buttonStyle={styles.humanityBtn}>
+        <Button color="#00d8b6" buttonStyle={styles.humanityBtn}
+        onPress={() => navigation.navigate("B1Page")}>
           <Image source={require("./../assets/homeHuman.png")} />
         </Button>
       </View>

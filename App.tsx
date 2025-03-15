@@ -10,18 +10,34 @@ import B1Page from "./views/B1Page";
 import B2Page from "./views/B2Page";
 import B3Page from "./views/B3Page";
 
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
+
+
 
 
 
 export default function App() {
   return (
     
-      // <NavigationContainer>
-      //   <StackNavigator />
-      // </NavigationContainer>
-      <>
-      <B3Page />
-      </>
+    <NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false, // ซ่อน Header
+      }}
+      initialRouteName="HomeUI"
+    >
+      <Stack.Screen name="HomeUI" component={HomeUI} />
+      <Stack.Screen name="A1Page" component={A1Page} />
+      <Stack.Screen name="A2Page" component={A2Page} />
+      <Stack.Screen name="A3Page" component={A3Page} />
+      <Stack.Screen name="A4Page" component={A4Page} />
+      <Stack.Screen name="B1Page" component={B1Page} />
+      <Stack.Screen name="B2Page" component={B2Page} />
+      <Stack.Screen name="B3Page" component={B3Page} />
+    </Stack.Navigator>
+  </NavigationContainer>
     
   );
 }
